@@ -117,6 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
    const mapsContainer = document.getElementById("maps-container");
    const runBtn = document.getElementById("run-btn");
 
+   mapsContainer.style.setProperty("--cols", MAPS_WIDTH);
+   mapsContainer.style.setProperty("--rows", MAPS_HEIGHT);
+
+
    for (let row = 0; row < MAPS_HEIGHT; row++) {
       for (let col = 0; col < MAPS_WIDTH; col++) {
          const cell = document.createElement("div");
@@ -161,10 +165,11 @@ document.addEventListener("DOMContentLoaded", () => {
          console.info(pathFormatted)
 
          const rightWaysEl = document.createElement("p");
-         rightWaysEl.innerHTML = pathFormatted;
+         rightWaysEl.innerHTML = `Rute : ${pathFormatted}`;
          resultInfoContainer.appendChild(rightWaysEl)
       } else {
          console.error("Format maps tidak valid")
       }
    });
 });
+

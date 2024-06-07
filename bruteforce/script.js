@@ -23,6 +23,9 @@ let maps = [
    [0, 1, 1, 1, 1, 0],
    [0, 0, 1, 0, 1, 0],
    [0, 0, 1, 1, 1, 1],
+
+
+
 ];
 
 // let maps = [
@@ -123,6 +126,9 @@ function moveMouse(row, col) {
 document.addEventListener("DOMContentLoaded", () => {
    const mapsContainer = document.getElementById("maps-container");
    const runBtn = document.getElementById("run-btn");
+
+   mapsContainer.style.setProperty("--cols", MAPS_WIDTH);
+   mapsContainer.style.setProperty("--rows", MAPS_HEIGHT);
 
    for (let row = 0; row < MAPS_HEIGHT; row++) {
       for (let col = 0; col < MAPS_WIDTH; col++) {
